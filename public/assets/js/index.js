@@ -4,6 +4,10 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
+const router = require('express').Router()
+const path = require('path')
+const fs = require('fs')
+
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
