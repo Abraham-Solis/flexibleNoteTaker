@@ -17,9 +17,11 @@ app.get('/notes', (req, res) =>{
    res.sendFile(path.join(__dirname, 'public', 'index.html'))
  })
 
+ //heroku port
 
 const port = process.env.PORT || 4000;
 app.listen(port);
 
+//local hosting 
 
 // app.listen(3000)
