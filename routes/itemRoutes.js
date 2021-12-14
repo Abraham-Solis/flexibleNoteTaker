@@ -35,7 +35,7 @@ router.post('/api/notes', (req, res) => {
 router.delete('/api/notes/:id', (req, res) => {
   fs.readFile(path.join(__dirname, '..', 'db', 'db.json'), 'utf-8', (err, data) => {
     const notes = JSON.parse(data)
-    for (let i = 0; i < notes.legnth; i++) {
+    for (let i = 0; i < notes.length; i++) {
       const dbElement = notes[i];
       if (dbElement.id === req.params.id) {
         notes.splice(i, 1)
