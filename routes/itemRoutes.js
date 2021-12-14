@@ -1,7 +1,9 @@
+//Routes Required 
+
 const router = require('express').Router()
 const path = require('path')
-const { v4: uuidv4 } = require('uuid');
 const fs = require('fs')
+const { v4: uuidv4 } = require('uuid');
 
 //Function for gettng Notes
 
@@ -30,16 +32,19 @@ router.post('/api/notes', (req, res) => {
 
 //Function to delte previous Notes
 
-router.delete('/api/notes/:id', (req,res) =>{
-  fs.readFile(path.join(__dirname, '..', 'db', 'db.json'), 'utf-8', (err,data) =>{
+router.delete('/api/notes/:id', (req, res) => {
+  fs.readFile(path.join(__dirname, '..', 'db', 'db.json'), 'utf-8', (err, data) => {
     const notes = JSON.parse(data)
-    for (let i=0; i < notes.legnth; i++) {
+    for (let i = 0; i < notes.legnth; i++) {
       const dbElement = notes[i];
-      if(dbElement.id === req.params.id) {
-        notes.splice(i,1)
+      if (dbElement.id === req.params.id) {
+        notes.splice(i, 1)
       }
     }
-    
+    fs.writeFile(path.join(__dirname, '..', 'db', 'db.json'), JSON.stringify(notes), err => {
+      if (err) { console.log(err) }
+      res.sendStatus(200)
+    })
   })
 })
 
