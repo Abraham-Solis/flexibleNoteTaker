@@ -2,7 +2,7 @@ const router = require('express').Router()
 const path = require('path')
 const fs = require('fs')
 const express = require('express')
-const app= express()
+const app = express()
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true}))
