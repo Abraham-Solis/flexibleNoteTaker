@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,14 @@
   },
   "devDependencies": {
     "jest": "^27.4.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abraham-Solis/flexibleNoteTaker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Abraham-Solis/flexibleNoteTaker/issues"
+  },
+  "homepage": "https://github.com/Abraham-Solis/flexibleNoteTaker#readme"
 }

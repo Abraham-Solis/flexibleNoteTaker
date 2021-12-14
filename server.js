@@ -1,10 +1,8 @@
+const router = require('express').Router()
+const path = require('path')
+const fs = require('fs')
 const express = require('express')
-const req = require('express')
-
-const path = reqiuire('path')
-
-const app = express()
-
+const app= express()
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true}))
@@ -20,4 +18,5 @@ app.get('/notes', req, res =>{
  })
 
 
-app.listen(3000)
+const port = process.env.PORT || 4000;
+app.listen(port);
