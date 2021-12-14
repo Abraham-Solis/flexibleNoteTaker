@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.use(require('./routes/itemRoutes.js'))
 
-app.get('/notes', req, res =>{
+app.get('/notes', (req, res) =>{
   res.sendFile(path.join(__dirname, 'public', 'notes.html'))
 })
  app.get('*', (req, res)=>{
@@ -18,5 +18,8 @@ app.get('/notes', req, res =>{
  })
 
 
-const port = process.env.PORT || 4000;
-app.listen(port);
+// const port = process.env.PORT || 4000;
+// app.listen(port);
+
+
+app.listen(3000)
